@@ -15,42 +15,42 @@
 
 <body>
 
-    <element class="frame">
+    <div class="frame">
         
-        <element class="answer-box"> </element>
-        <element class="buttons-section"> 
-        <input type="button" class="number-button" value="9">
-        <input type="button" class="number-button" value="8">
-        <input type="button" class="number-button" value="7">
-        <input type="button" class="function-button" value="<">
-        <input type="button" class="function-button" value=">">
-        <input type="button" class="function-button" value="C">
-        <input type="button" class="function-button" value="D">
-        <input type="button" class="number-button" value="6">
-        <input type="button" class="number-button" value="5">
-        <input type="button" class="number-button" value="4">
-        <input type="button" class="function-button" value="+">
-        <input type="button" class="function-button" value="x">
-        <input type="button" class="function-button" value="x²">
-        <input type="button" class="function-button" value="xⁿ">
-        <input type="button" class="number-button" value="3">
-        <input type="button" class="number-button" value="2">
-        <input type="button" class="number-button" value="1">
-        <input type="button" class="function-button" value="-">
-        <input type="button" class="function-button" value="/">
-        <input type="button" class="function-button" value="√">
-        <input type="button" class="function-button" value="ⁿ√">
+        <div class="answer-box" id="display" contenteditable="true"></div>
+        <div class="buttons-section"> 
+        <input type="button" class="number-button" value="9" onclick="display(this.value)">
+        <input type="button" class="number-button" value="8" onclick="display(this.value)">
+        <input type="button" class="number-button" value="7" onclick="display(this.value)">
+        <input type="button" class="function-button" value="<" onclick="moveCursor('left')" >
+        <input type="button" class="function-button" value=">" onclick="moveCursor('right')"">
+        <input type="button" class="function-button" value="⌫" onclick="backspace()">
+        <input type="button" class="function-button" value="AC" onclick="clearDisplay()">
+        <input type="button" class="number-button" value="6" onclick="display(this.value)">
+        <input type="button" class="number-button" value="5" onclick="display(this.value)">
+        <input type="button" class="number-button" value="4" onclick="display(this.value)">
+        <input type="button" class="function-button" value="+" onclick="display(this.value)">
+        <input type="button" class="function-button" value="×" onclick="display(this.value)">
+        <input type="button" class="function-button" value="x²" onclick="handlePower(2)">
+        <input type="button" class="function-button" value="xⁿ" onclick="handlePower('n')">
+        <input type="button" class="number-button" value="3" onclick="display(this.value)">
+        <input type="button" class="number-button" value="2" onclick="display(this.value)">
+        <input type="button" class="number-button" value="1" onclick="display(this.value)">
+        <input type="button" class="function-button" value="-" onclick="display(this.value)">
+        <input type="button" class="function-button" value="÷" onclick="display(this.value)">
+        <input type="button" class="function-button" value="√" onclick="startRoot(2)">
+        <input type="button" class="function-button" value="ⁿ√" onclick="startRoot('n')">
         <input type="button" class="function-button" value="( )">
-        <input type="button" class="number-button" value="0">
-        <input type="button" class="function-button" value=",">
-        <input type="button" class="function-button" value="log">
+        <input type="button" class="number-button" value="0" onclick="display(this.value)">
+        <input type="button" class="function-button" value="," onclick="display(this.value)">
+        <input type="button" class="function-button" value="log"  onclick="startLog()">
         <input type="button" class="function-button" value="ln">
-        <input type="button" class="function-button" value="!">
+        <input type="button" class="function-button" value="!" onclick="display(this.value)"">
         <input type="button" class="answer-button" value="=">
-        </element>
+        </div>
         
-        
-    </element>
+    </div>
+
 </body>
 
 </html>

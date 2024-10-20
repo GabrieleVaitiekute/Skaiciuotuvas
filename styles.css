@@ -28,20 +28,21 @@ body, html {
 
 .answer-box {
     background-color: var(--dark-grey);
-    width: 580px;
+    width: 600px;
     height: 150px;
     display: flex;
-    align-items: flex-start; /* Aligns content to the top */
-    justify-content: flex-start; /* Aligns content to the left */
-    padding: 10px; /* Adds some padding inside the box */
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 10px;
     margin: 0 auto;
     margin-bottom: 25px;
     border-radius: 25px;
-    font-size: 2.1em; /* Adjust size as needed */
-    color: white; /* Text color */
-    overflow: auto; /* Adds scrollbars if content overflows */
+    font-size: 2.1em;
+    color: white;
+    overflow: auto;
+    outline: none; /* Removes the default focus outline */
+    position: relative;
 }
-
 .buttons-section {
     background-color: rgba(84, 84, 84, 0.2);
     width: 550px;
