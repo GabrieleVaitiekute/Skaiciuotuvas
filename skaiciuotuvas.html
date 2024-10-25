@@ -5,6 +5,8 @@
 <head>
 	<link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
+    <script src=
+    "https://cdnjs.cloudflare.com/ajax/libs/mathjs/10.6.4/math.js"></script>
 	<meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Calculator">
@@ -19,34 +21,41 @@
         
         <div class="answer-box" id="display" contenteditable="true"></div>
         <div class="buttons-section"> 
-        <input type="button" class="number-button" value="9" onclick="display(this.value)">
-        <input type="button" class="number-button" value="8" onclick="display(this.value)">
-        <input type="button" class="number-button" value="7" onclick="display(this.value)">
-        <input type="button" class="function-button" value="<" onclick="moveCursor('left')" >
-        <input type="button" class="function-button" value=">" onclick="moveCursor('right')"">
-        <input type="button" class="function-button" value="⌫" onclick="backspace()">
-        <input type="button" class="function-button" value="AC" onclick="clearDisplay()">
-        <input type="button" class="number-button" value="6" onclick="display(this.value)">
-        <input type="button" class="number-button" value="5" onclick="display(this.value)">
-        <input type="button" class="number-button" value="4" onclick="display(this.value)">
-        <input type="button" class="function-button" value="+" onclick="display(this.value)">
-        <input type="button" class="function-button" value="×" onclick="display(this.value)">
-        <input type="button" class="function-button" value="x²" onclick="handlePower(2)">
-        <input type="button" class="function-button" value="xⁿ" onclick="handlePower('n')">
-        <input type="button" class="number-button" value="3" onclick="display(this.value)">
-        <input type="button" class="number-button" value="2" onclick="display(this.value)">
-        <input type="button" class="number-button" value="1" onclick="display(this.value)">
-        <input type="button" class="function-button" value="-" onclick="display(this.value)">
-        <input type="button" class="function-button" value="÷" onclick="display(this.value)">
-        <input type="button" class="function-button" value="√" onclick="startRoot(2)">
-        <input type="button" class="function-button" value="ⁿ√" onclick="startRoot('n')">
-        <input type="button" class="function-button" value="( )">
-        <input type="button" class="number-button" value="0" onclick="display(this.value)">
-        <input type="button" class="function-button" value="," onclick="display(this.value)">
-        <input type="button" class="function-button" value="log"  onclick="startLog()">
-        <input type="button" class="function-button" value="ln">
-        <input type="button" class="function-button" value="!" onclick="display(this.value)"">
-        <input type="button" class="answer-button" value="=">
+            <div>
+                <input type="button" class="function-button" value="%"  onclick="display(this.value)">
+                <input type="button" class="del-button " value="!" onclick="display(this.value)">
+                <input type="button" class="del-button " value="⌫" onclick="backspace()">
+                <input type="button" class="function-button" value="AC" onclick="clearDisplay()">
+                <input type="button" class="answer-button" value="="onclick="calculate()">
+            </div>
+            <div>
+                <input type="button" class="function-button" value="x²" onclick="handlePower(2)">
+                <input type="button" class="number-button" value="9" onclick="display(this.value)">
+                <input type="button" class="number-button" value="8" onclick="display(this.value)">
+                <input type="button" class="number-button" value="7" onclick="display(this.value)">
+                <input type="button" class="function-button" value="+" onclick="display(this.value)">
+            </div>
+            <div>
+                <input type="button" class="function-button" value="xⁿ" onclick="handlePower('n')">
+                <input type="button" class="number-button" value="6" onclick="display(this.value)">
+                <input type="button" class="number-button" value="5" onclick="display(this.value)">
+                <input type="button" class="number-button" value="4" onclick="display(this.value)">
+                <input type="button" class="function-button" value="-" onclick="display(this.value)">
+            </div>
+            <div> 
+                <input type="button" class="function-button" value="√" onclick="startRoot(2)">
+                <input type="button" class="number-button" value="3" onclick="display(this.value)">
+                <input type="button" class="number-button" value="2" onclick="display(this.value)">
+                <input type="button" class="number-button" value="1" onclick="display(this.value)">
+                <input type="button" class="function-button" value="×" onclick="display(this.value)">
+            </div>
+            <div>
+                <input type="button" class="function-button" value="ⁿ√" onclick="startRoot(' n')">
+                <input type="button" class="function-button" value="," onclick="display(this.value)">
+                <input type="button" class="number-button" value="0" onclick="display(this.value)">
+                <input type="button" class="function-button" value="( )">
+                <input type="button" class="function-button" value="÷" onclick="display(this.value)">
+            </div>
         </div>
         
     </div>

@@ -15,20 +15,19 @@ body, html {
 }
 
 .frame {
+    width: 420px;
     margin-top: 260px;
     background-color: var(--grey) ;
-    width: 600px;
-    height: 540px;
     display: block;
     justify-content: center; 
     margin: 0 auto;
     border-radius: 25px;
-    padding: 25px;
+    padding: 20px;
 }
 
 .answer-box {
     background-color: var(--dark-grey);
-    width: 600px;
+    width: 400px;
     height: 150px;
     display: flex;
     align-items: flex-start;
@@ -45,21 +44,21 @@ body, html {
 }
 .buttons-section {
     background-color: rgba(84, 84, 84, 0.2);
-    width: 550px;
+    width: 380px;
     margin: 0 auto;
     display: block;
     justify-content: center; 
     border-radius: 25px;
-    padding: 25px;
+    padding: 20px;
     
 }
-.number-button, .function-button, .answer-button  {
+.number-button, .function-button, .answer-button, .del-button  {
     border: none;
     text-align: center;
     width: 60px;
     height: 60px;
     border-radius: 25px;
-    margin: 7px;  
+    margin: 6px;  
     color: white;
     box-shadow: 0 5px #999;
     font-size: 2em;
@@ -69,10 +68,10 @@ body, html {
 .number-button{background-color: var( --magenta);}   
 .number-button:hover {background-color: #ab5bc2;}
 
-.function-button { background-color: var( --purple);}
-.function-button:hover {background-color:#7d4ae0;}
+.function-button, .del-button { background-color: var( --purple);}
+.function-button:hover, .del-button:hover {background-color:#7d4ae0;}
 
-.number-button:active, .function-button:active{
+.number-button:active, .function-button:active, .del-button:active {
     box-shadow: 0 3px #545454;
     transform: translateY(3px);
 }
@@ -82,4 +81,9 @@ body, html {
 .answer-button:active{
     box-shadow: 0 3px #2a2a2a;
     transform: translateY(3px);
+}
+
+@media (orientation: landscape){
+
+
 }
