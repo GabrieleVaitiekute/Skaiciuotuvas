@@ -6,9 +6,25 @@ document.getElementById('display').addEventListener('input', function(e) {
         this.innerText = '';
     }
 });
+
 function display(value) {
     const display = document.getElementById('display');
-    if (display.innerText.includes('=') && !['+', '-', '*', '/', '(', ')', '^', '%', ','].includes(value)) {
+    let currentText = display.innerText;
+
+    // Tikrina ar pradinis įvedimas yra skaičius arba saknies funkcija
+    if (currentText === '' && !['root(2,', 'root('].includes(value) && isNaN(value)) {
+        return; // Jeigu tekstas tuščias, ir įvedamas simbolis nėra leistinas, nedaro nieko
+    }
+
+    // Tikrina, ar nėra bandymo įvesti du operatorius iš eilės
+    const lastChar = currentText.slice(-1);
+    const operators = ['+', '-', '*', '/', '^', '(', ')', '%', ','];
+    if (operators.includes(lastChar) && operators.includes(value)) {
+        return; // Neleidžia įvesti dviejų operatorių iš eilės
+    }
+
+    // Tinkamai pridėti reikšmę prie dabartinio ekrano teksto
+    if (currentText.includes('=') && !['+', '-', '*', '/', '(', ')', '^', '%', ','].includes(value)) {
         clearDisplay();
     }
     display.innerText += value;
@@ -22,7 +38,7 @@ function calculate() {
     expression = expression.replace(/,/g, '.');
 
     // Teisingas 'root' funkcijos tvarkymas po kablelių pakeitimo
-    expression = expression.replace(/root\((\d+),\s*(.*?)\)/g, (match, n, x) => {
+    expression = expression.replace(/root\((\d+).\s*(.*?)\)/g, (match, n, x) => {
         n = n.trim(); // Užtikrinti, kad nebūtų pradžios/galo tarpų
         x = x.trim(); // Užtikrinti, kad nebūtų pradžios/galo tarpų
         return `Math.pow(${x}, 1/${n})`; // Teisingai suformatuoti Math.pow funkcijos iškvietimą
